@@ -1,3 +1,5 @@
+package day4;
+
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import javax.swing.JOptionPane;
@@ -75,21 +77,21 @@ public class prog extends JFrame {
 			    if (str.isEmpty())
 			    {
 			      JOptionPane.showMessageDialog(null,
-			            "Введите путь к файлу!","Ошибка",0);
+			            "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ!","пїЅпїЅпїЅпїЅпїЅпїЅ",0);
 			    }
 			    else
 			    {
 			      File nf = new File(str);
 			      try
 			      {
-			        nf.createNewFile(); //создание файла при нажатии
+			        nf.createNewFile(); //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 			        JOptionPane.showMessageDialog(null, 
-			              "Файл создан!","Сообщение",1);
+			              "пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ!","пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ",1);
 			      }
 			      catch(IOException exp)
 			      {
 			        JOptionPane.showMessageDialog(null, 
-			               "Файл не создан!","Ошибка",0);
+			               "пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ!","пїЅпїЅпїЅпїЅпїЅпїЅ",0);
 			      }
 			    }					
 			}
@@ -105,21 +107,21 @@ public class prog extends JFrame {
 			    if (str.isEmpty())
 			    {
 			      JOptionPane.showMessageDialog(null, 
-			             "Введите путь к файлу!","Ошибка",0);
+			             "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ!","пїЅпїЅпїЅпїЅпїЅпїЅ",0);
 			    }
 			    else
 			    {
 			      File nf = new File(str);
-			      if (nf.exists()) //проверка существования файла
+			      if (nf.exists()) //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
 			      {
-			        nf.delete(); //удаление
+			        nf.delete(); //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 			        JOptionPane.showMessageDialog(null, 
-			             "Файл удален!","Сообщение",1); 
+			             "пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ!","пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ",1); 
 			      }
 			      else
 			      {
 			        JOptionPane.showMessageDialog(null, 
-			              "Файл не найден!","Ошибка",0);
+			              "пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ!","пїЅпїЅпїЅпїЅпїЅпїЅ",0);
 			      }                	  
 			    }												
 			}
@@ -135,7 +137,7 @@ public class prog extends JFrame {
 			    if (str.isEmpty())
 			    {
 			      JOptionPane.showMessageDialog(null, 
-			           "Введите путь к файлу!","Ошибка",0);
+			           "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ!","пїЅпїЅпїЅпїЅпїЅпїЅ",0);
 			    }
 			    else
 			    {
@@ -143,21 +145,21 @@ public class prog extends JFrame {
 			      if (nf.exists())
 			      {
 			         String newName = 
-			           JOptionPane.showInputDialog("Введите новое имя:");
+			           JOptionPane.showInputDialog("пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ:");
 			         if (newName==null) newName=""; 
 			         if (!newName.trim().isEmpty())
 			         {
 			           File newFile = 
 			            new File(nf.getParent()+"\\"+newName);
-			           nf.renameTo(newFile); //переменование
+			           nf.renameTo(newFile); //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 			           JOptionPane.showMessageDialog(null, 
-			              "Файл переименован!","Сообщение",1);                
+			              "пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ!","пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ",1);                
 			         }                	   
 			       }
 			       else
 			       {
 			         JOptionPane.showMessageDialog(null, 
-			               "Файл не найден!","Ошибка",0);
+			               "пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ!","пїЅпїЅпїЅпїЅпїЅпїЅ",0);
 			       }                	  
 			     }																
 			}
@@ -173,7 +175,7 @@ public class prog extends JFrame {
 			    if (str.isEmpty())
 			    {
 			      JOptionPane.showMessageDialog(null, 
-			          "Введите путь к файлу!","Ошибка",0);
+			          "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ!","пїЅпїЅпїЅпїЅпїЅпїЅ",0);
 			    }
 			    else
 			    {
@@ -186,9 +188,9 @@ public class prog extends JFrame {
 			            BufferedReader in = 
 			                  new BufferedReader(new InputStreamReader(obj));
 			            String tmp = "";
-			            while(in.ready()) //чтение построчно в цикле
+			            while(in.ready()) //пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ
 			            {
-			              tmp += (in.readLine()+"\n"); //считать строку
+			              tmp += (in.readLine()+"\n"); //пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 			            }
 			            textArea.setText(tmp);                		  
 			            in.close();
@@ -199,7 +201,7 @@ public class prog extends JFrame {
 			      else
 			      {
 			          JOptionPane.showMessageDialog(null, 
-			              "Файл не найден!","Ошибка",0);
+			              "пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ!","пїЅпїЅпїЅпїЅпїЅпїЅ",0);
 			       }                	  
 			     }												
 			}});
@@ -214,7 +216,7 @@ public class prog extends JFrame {
 			    if (str.isEmpty())
 			    {
 				 JOptionPane.showMessageDialog(null, 
-			              "Введите путь к файлу!","Ошибка",0);
+			              "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ!","пїЅпїЅпїЅпїЅпїЅпїЅ",0);
 			   }
 			   else
 			   {
@@ -222,7 +224,7 @@ public class prog extends JFrame {
 			     if (nf.exists())
 			     {
 
-			       // Запись в файл
+			       // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ
 			       try
 			       {
 			         OutputStream obj = new FileOutputStream(str);
@@ -253,13 +255,13 @@ public class prog extends JFrame {
 			        	 rasshif = rasshif+(char)(j^k);
 			         }
 			         
-			         //out.write(textArea.getText()); //запись из поля 
+			         //out.write(textArea.getText()); //пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ 
 			         out.write(shif);
 			         out.write(rasshif);
 			         out.close();
 			         obj.close();
 			         JOptionPane.showMessageDialog(null, 
-			                "Запись выполнена!!!","Сообщение",1);
+			                "пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ!!!","пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ",1);
 			       }
 			       catch (IOException exp) {}                	  
 
@@ -267,7 +269,7 @@ public class prog extends JFrame {
 			     else
 			     {
 			       JOptionPane.showMessageDialog(null,
-			            "Файл не найден!","Ошибка",0);
+			            "пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ!","пїЅпїЅпїЅпїЅпїЅпїЅ",0);
 			     }                	  
 			   }}
 		});						
