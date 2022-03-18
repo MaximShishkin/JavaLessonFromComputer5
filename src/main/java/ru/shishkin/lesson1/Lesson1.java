@@ -1,10 +1,11 @@
+package ru.shishkin.lesson1;
 
+import java.util.Scanner;
 
-import java.util.Scanner; 
-public class prog {
+public class Lesson1 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+
 		Scanner scan = new Scanner(System.in);
 		
 		int t1 = scan.nextInt();

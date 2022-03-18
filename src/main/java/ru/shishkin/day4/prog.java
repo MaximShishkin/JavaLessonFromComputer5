@@ -1,6 +1,5 @@
-package day4;
+package ru.shishkin.day4;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import javax.swing.JOptionPane;
 import javax.swing.JFrame;
@@ -23,9 +22,6 @@ public class prog extends JFrame {
 	private JTextField textFieldFile;
 	private JTextArea textArea;
 
-	/**
-	 * Launch the application.
-	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -39,9 +35,6 @@ public class prog extends JFrame {
 		});
 	}
 
-	/**
-	 * Create the frame.
-	 */
 	public prog() {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(prog.class.getResource("/javax/swing/plaf/metal/icons/Inform.gif")));
 		setTitle("\u041E\u043F\u0435\u0440\u0430\u0446\u0438\u0438 \u0434\u043B\u044F \u0440\u0430\u0431\u043E\u0442\u044B \u0441 \u0444\u0430\u0439\u043B\u0430\u043C\u0438");
