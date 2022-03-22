@@ -1,4 +1,4 @@
-package ru.shishkin.day4;
+package ru.shishkin.updateFiles;
 
 import java.awt.EventQueue;
 import javax.swing.JOptionPane;
