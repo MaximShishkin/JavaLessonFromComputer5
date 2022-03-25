@@ -84,8 +84,8 @@ public class GameSnake {
         int flag = peremGoloa();
 
         if (flag == 3) {
-			endg = true;
-		}
+            endg = true;
+        }
 
         for (int i = 0; i < 30; i++) {
             for (int j = 0; j < 30; j++) {

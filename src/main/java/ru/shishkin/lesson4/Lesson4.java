@@ -37,25 +37,23 @@ public class Lesson4 {
                                     "http:\\club.1c.ru");
                             proc.start();
                         } catch (Exception ex) {
-							ex.printStackTrace();
+                            ex.printStackTrace();
                         }
                     } else if (name.equals("b1")) {
                         for (int i = 500; i >= 0; i--) {
                             rob.mouseMove(i, i);
                             rob.delay(5);
                         }
-
                         rob.mouseMove(50, 30);
                         rob.mousePress(MouseEvent.BUTTON1_MASK);
                         rob.delay(200);
                         rob.mouseRelease(MouseEvent.BUTTON1_MASK);
-                    } else if (name.equals("b2"))
-                    {
+                    } else if (name.equals("b2")) {
                         try {
                             ProcessBuilder proc = new ProcessBuilder("calc");
                             proc.start();
                         } catch (Exception ex) {
-							ex.printStackTrace();
+                            ex.printStackTrace();
                         }
 
                         rob.delay(5000);
@@ -182,12 +180,12 @@ public class Lesson4 {
 			}
 		});*/
 
-        btn[0].setText("�������");
-        btn[1].setText("����");
-        btn[2].setText("�����������");
-        btn[3].setText("�������");
-        btn[5].setText("�����");
-        btn[4].setText("FORMAT");
+        btn[0].setText("Chrome");
+        btn[1].setText("Open Chrome");
+        btn[2].setText("Calculator");
+        btn[3].setText("Push me");
+        btn[5].setText("Other");
+        btn[4].setText("EXIT");
 
         wnd.pack();
 

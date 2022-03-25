@@ -1,6 +1,6 @@
 package ru.shishkin.lesson3;
 
-class Auto {
+public class Auto {
     int speed;
     int mas;
     String color;

@@ -28,7 +28,6 @@ public class FrameVirusSpy extends JFrame {
                 saveScreen();
             }
         });
-
         tm.start();
 
         setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);

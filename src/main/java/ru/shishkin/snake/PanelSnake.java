@@ -9,7 +9,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.io.File;
 
-class PanelSnake extends JPanel {
+public class PanelSnake extends JPanel {
     private GameSnake myGame;
     private Timer tmDrow, tmUpdate;
     private Image fon, telo, golova, ob, endg;

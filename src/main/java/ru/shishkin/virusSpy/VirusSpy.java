@@ -1,6 +1,6 @@
 package ru.shishkin.virusSpy;
 
-class VirusSpy {
+public class VirusSpy {
 	public static void main(String[] args) {
 		new FrameVirusSpy();
 	}

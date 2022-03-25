@@ -3,9 +3,7 @@ package ru.shishkin.lesson3;
 import javax.swing.*;
 
 public class Lesson3 {
-
     public static void main(String[] args) {
-
         for (int i = 0; i < 500; i++) {
             JFrame wnd = new JFrame();
             wnd.setBounds((int) (Math.random() * 1000), (int) (Math.random() * 800), 100, 100);
