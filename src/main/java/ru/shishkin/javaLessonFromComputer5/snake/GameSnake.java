@@ -13,13 +13,13 @@ public class GameSnake {
         mas = new int[30][30];
     }
 
-    void povorot() {
+    protected void povorot() {
         if (Math.abs(new_napr - napr) != 2) {
             napr = new_napr;
         }
     }
 
-    void make_new() {
+    protected void make_new() {
         while (true) {
             int k = (int) (Math.random() * 30);
             int s = (int) (Math.random() * 30);
@@ -30,7 +30,7 @@ public class GameSnake {
         }
     }
 
-    void start() {
+    protected void start() {
         for (int i = 0; i < 30; i++) {
             for (int j = 0; j < 30; j++) {
                 mas[i][j] = 0;
@@ -48,7 +48,7 @@ public class GameSnake {
         make_new();
     }
 
-    int peremGoloa() {
+    protected int peremGoloa() {
         if (napr == 0) //left
         {
             if ((gX - 1) >= 0) gX--;
@@ -80,7 +80,7 @@ public class GameSnake {
         return rez;
     }
 
-    void perem() {
+    protected void perem() {
         int flag = peremGoloa();
 
         if (flag == 3) {

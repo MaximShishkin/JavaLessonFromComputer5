@@ -7,7 +7,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.io.File;
 
 public class PanelPlanetaryMovement extends JPanel {
     private int x = 0, y = 0;
@@ -36,8 +35,8 @@ public class PanelPlanetaryMovement extends JPanel {
         setFocusable(true);
 
         try {
-            img1 = ImageIO.read(new File("./fon.png"));
-            img = ImageIO.read(new File("./planeta.png"));
+            img1 = ImageIO.read(getClass().getClassLoader().getResourceAsStream("planetaryMovement/fon.png"));
+            img = ImageIO.read(getClass().getClassLoader().getResourceAsStream("planetaryMovement/planeta.png"));
         } catch (Exception exp) {
             exp.printStackTrace();
         }

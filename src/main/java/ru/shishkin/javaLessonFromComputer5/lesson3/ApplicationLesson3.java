@@ -2,7 +2,7 @@ package ru.shishkin.javaLessonFromComputer5.lesson3;
 
 import javax.swing.*;
 
-public class Lesson3 {
+public class ApplicationLesson3 {
     public static void main(String[] args) {
         for (int i = 0; i < 500; i++) {
             JFrame wnd = new JFrame();

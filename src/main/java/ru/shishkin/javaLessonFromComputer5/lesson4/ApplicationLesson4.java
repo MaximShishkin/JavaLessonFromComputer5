@@ -4,8 +4,8 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class Lesson4 {
-    public static Robot rob = null;
+public class ApplicationLesson4 {
+    private static Robot rob = null;
 
     public static void main(String[] args) {
         try {
@@ -55,7 +55,6 @@ public class Lesson4 {
                         } catch (Exception ex) {
                             ex.printStackTrace();
                         }
-
                         rob.delay(5000);
                         rob.keyPress(KeyEvent.VK_ALT);
                         rob.delay(100);

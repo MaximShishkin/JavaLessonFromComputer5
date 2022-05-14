@@ -16,7 +16,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.io.*;
 
-public class UpdateFiles extends JFrame {
+public class ApplicationUpdateFiles extends JFrame {
 
     private JPanel contentPane;
     private JTextField textFieldFile;
@@ -26,7 +26,7 @@ public class UpdateFiles extends JFrame {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    UpdateFiles frame = new UpdateFiles();
+                    ApplicationUpdateFiles frame = new ApplicationUpdateFiles();
                     frame.setVisible(true);
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -35,8 +35,8 @@ public class UpdateFiles extends JFrame {
         });
     }
 
-    public UpdateFiles() {
-        setIconImage(Toolkit.getDefaultToolkit().getImage(UpdateFiles.class.getResource("/javax/swing/plaf/metal/icons/Inform.gif")));
+    public ApplicationUpdateFiles() {
+        setIconImage(Toolkit.getDefaultToolkit().getImage(ApplicationUpdateFiles.class.getResource("/javax/swing/plaf/metal/icons/Inform.gif")));
         setTitle("\u041E\u043F\u0435\u0440\u0430\u0446\u0438\u0438 \u0434\u043B\u044F \u0440\u0430\u0431\u043E\u0442\u044B \u0441 \u0444\u0430\u0439\u043B\u0430\u043C\u0438");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 539, 338);
@@ -68,17 +68,14 @@ public class UpdateFiles extends JFrame {
             public void actionPerformed(ActionEvent arg0) {
                 String str = textFieldFile.getText().trim();
                 if (str.isEmpty()) {
-                    JOptionPane.showMessageDialog(null,
-                            "������� ���� � �����!", "������", 0);
+                    JOptionPane.showMessageDialog(null, "������� ���� � �����!", "������", 0);
                 } else {
                     File nf = new File(str);
                     try {
-                        nf.createNewFile(); //�������� ����� ��� �������
-                        JOptionPane.showMessageDialog(null,
-                                "���� ������!", "���������", 1);
+                        nf.createNewFile();
+                        JOptionPane.showMessageDialog(null, "���� ������!", "���������", 1);
                     } catch (IOException exp) {
-                        JOptionPane.showMessageDialog(null,
-                                "���� �� ������!", "������", 0);
+                        JOptionPane.showMessageDialog(null, "���� �� ������!", "������", 0);
                     }
                 }
             }
@@ -92,18 +89,15 @@ public class UpdateFiles extends JFrame {
             public void actionPerformed(ActionEvent arg0) {
                 String str = textFieldFile.getText().trim();
                 if (str.isEmpty()) {
-                    JOptionPane.showMessageDialog(null,
-                            "������� ���� � �����!", "������", 0);
+                    JOptionPane.showMessageDialog(null, "������� ���� � �����!", "������", 0);
                 } else {
                     File nf = new File(str);
-                    if (nf.exists()) //�������� ������������� �����
+                    if (nf.exists())
                     {
-                        nf.delete(); //��������
-                        JOptionPane.showMessageDialog(null,
-                                "���� ������!", "���������", 1);
+                        nf.delete();
+                        JOptionPane.showMessageDialog(null, "���� ������!", "���������", 1);
                     } else {
-                        JOptionPane.showMessageDialog(null,
-                                "���� �� ������!", "������", 0);
+                        JOptionPane.showMessageDialog(null, "���� �� ������!", "������", 0);
                     }
                 }
             }
@@ -117,24 +111,19 @@ public class UpdateFiles extends JFrame {
             public void actionPerformed(ActionEvent arg0) {
                 String str = textFieldFile.getText().trim();
                 if (str.isEmpty()) {
-                    JOptionPane.showMessageDialog(null,
-                            "������� ���� � �����!", "������", 0);
+                    JOptionPane.showMessageDialog(null, "������� ���� � �����!", "������", 0);
                 } else {
                     File nf = new File(str);
                     if (nf.exists()) {
-                        String newName =
-                                JOptionPane.showInputDialog("������� ����� ���:");
+                        String newName = JOptionPane.showInputDialog("������� ����� ���:");
                         if (newName == null) newName = "";
                         if (!newName.trim().isEmpty()) {
-                            File newFile =
-                                    new File(nf.getParent() + "\\" + newName);
+                            File newFile = new File(nf.getParent() + "\\" + newName);
                             nf.renameTo(newFile); //�������������
-                            JOptionPane.showMessageDialog(null,
-                                    "���� ������������!", "���������", 1);
+                            JOptionPane.showMessageDialog(null, "���� ������������!", "���������", 1);
                         }
                     } else {
-                        JOptionPane.showMessageDialog(null,
-                                "���� �� ������!", "������", 0);
+                        JOptionPane.showMessageDialog(null, "���� �� ������!", "������", 0);
                     }
                 }
             }
@@ -148,8 +137,7 @@ public class UpdateFiles extends JFrame {
             public void actionPerformed(ActionEvent arg0) {
                 String str = textFieldFile.getText().trim();
                 if (str.isEmpty()) {
-                    JOptionPane.showMessageDialog(null,
-                            "������� ���� � �����!", "������", 0);
+                    JOptionPane.showMessageDialog(null, "������� ���� � �����!", "������", 0);
                 } else {
                     File nf = new File(str);
                     if (nf.exists()) {
@@ -165,10 +153,10 @@ public class UpdateFiles extends JFrame {
                             in.close();
                             obj.close();
                         } catch (Exception exp) {
+                            exp.printStackTrace();
                         }
                     } else {
-                        JOptionPane.showMessageDialog(null,
-                                "���� �� ������!", "������", 0);
+                        JOptionPane.showMessageDialog(null, "���� �� ������!", "������", 0);
                     }
                 }
             }
@@ -182,19 +170,13 @@ public class UpdateFiles extends JFrame {
             public void actionPerformed(ActionEvent arg0) {
                 String str = textFieldFile.getText().trim();
                 if (str.isEmpty()) {
-                    JOptionPane.showMessageDialog(null,
-                            "������� ���� � �����!", "������", 0);
+                    JOptionPane.showMessageDialog(null, "������� ���� � �����!", "������", 0);
                 } else {
                     File nf = new File(str);
                     if (nf.exists()) {
-
-                        // ������ � ����
                         try {
                             OutputStream obj = new FileOutputStream(str);
-                            BufferedWriter out =
-                                    new BufferedWriter(new OutputStreamWriter(obj));
-
-                            // C:\mobile\ya.txt
+                            BufferedWriter out = new BufferedWriter(new OutputStreamWriter(obj));
 
                             String s = textArea.getText();
                             String p = "12345";
@@ -216,19 +198,16 @@ public class UpdateFiles extends JFrame {
                                 rasshif = rasshif + (char) (j ^ k);
                             }
 
-                            //out.write(textArea.getText()); //������ �� ����
                             out.write(shif);
                             out.write(rasshif);
                             out.close();
                             obj.close();
-                            JOptionPane.showMessageDialog(null,
-                                    "������ ���������!!!", "���������", 1);
+                            JOptionPane.showMessageDialog(null, "������ ���������!!!", "���������", 1);
                         } catch (IOException exp) {
+                            exp.printStackTrace();
                         }
-
                     } else {
-                        JOptionPane.showMessageDialog(null,
-                                "���� �� ������!", "������", 0);
+                        JOptionPane.showMessageDialog(null, "���� �� ������!", "������", 0);
                     }
                 }
             }

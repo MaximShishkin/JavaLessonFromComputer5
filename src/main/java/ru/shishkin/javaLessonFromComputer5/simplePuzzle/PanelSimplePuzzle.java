@@ -4,22 +4,21 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.io.File;
 
 public class PanelSimplePuzzle extends JPanel {
     private int x = 3, y = 3;
     private Image fon;
-    JButton btnStart, btnSlow, btnStop;
+    private JButton btnStart, btnSlow, btnStop;
     private JLabel lb;
-    Image[] mas = new Image[15];
-    int[][] data = {
+    private Image[] mas = new Image[15];
+    private int[][] data = {
             {1, 2, 3, 4},
             {5, 6, 7, 8},
             {9, 10, 11, 12},
             {13, 14, 15, 0}
     };
 
-    public class myMouse1 implements MouseListener {
+    private class myMouse1 implements MouseListener {
         public void mouseClicked(MouseEvent e) {}
         public void mousePressed(MouseEvent e) {}
         public void mouseReleased(MouseEvent e) {}
@@ -27,20 +26,19 @@ public class PanelSimplePuzzle extends JPanel {
         public void mouseExited(MouseEvent e) {}
     }
 
-    public class myMouse2 implements MouseMotionListener {
+    private class myMouse2 implements MouseMotionListener {
         public void mouseDragged(MouseEvent e) {}
         public void mouseMoved(MouseEvent e) {}
     }
-
 
     public PanelSimplePuzzle() {
         addMouseListener(new myMouse1());
         addMouseMotionListener(new myMouse2());
 
         try {
-            fon = ImageIO.read(new File("./fon.png"));
+            fon = ImageIO.read(getClass().getClassLoader().getResourceAsStream("simplePuzzle/fon.png"));
             for (int i = 0; i < 15; i++) {
-                mas[i] = ImageIO.read(new File("./k" + (i + 1) + ".png"));
+                mas[i] = ImageIO.read(getClass().getClassLoader().getResourceAsStream("simplePuzzle/k" + (i + 1) + ".png"));
             }
         } catch (Exception exp) {
             exp.printStackTrace();
@@ -123,7 +121,8 @@ public class PanelSimplePuzzle extends JPanel {
         btnStop.setForeground(Color.RED);
         btnStop.setBounds(430, 230, 100, 50);
         btnStop.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {}
+            public void actionPerformed(ActionEvent e) {
+            }
         });
         add(btnStop);
 

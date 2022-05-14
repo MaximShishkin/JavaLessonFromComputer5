@@ -7,7 +7,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.io.File;
 
 public class PanelSnake extends JPanel {
     private GameSnake myGame;
@@ -38,11 +37,11 @@ public class PanelSnake extends JPanel {
         myGame = new GameSnake();
 
         try {
-            fon = ImageIO.read(new File("./fon.png"));
-            telo = ImageIO.read(new File("./telo.png"));
-            golova = ImageIO.read(new File("./golova.png"));
-            ob = ImageIO.read(new File("./ob.png"));
-            endg = ImageIO.read(new File("./endg.png"));
+            fon = ImageIO.read(getClass().getClassLoader().getResourceAsStream("snake/fon.png"));
+            telo = ImageIO.read(getClass().getClassLoader().getResourceAsStream("snake/telo.png"));
+            golova = ImageIO.read(getClass().getClassLoader().getResourceAsStream("snake/golova.png"));
+            ob = ImageIO.read(getClass().getClassLoader().getResourceAsStream("snake/ob.png"));
+            endg = ImageIO.read(getClass().getClassLoader().getResourceAsStream("snake/endg.png"));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -77,7 +76,6 @@ public class PanelSnake extends JPanel {
         btn1.setForeground(Color.BLUE);
         btn1.setBounds(630, 30, 150, 50);
         btn1.addActionListener(new ActionListener() {
-
             public void actionPerformed(ActionEvent e) {
                 myGame.start();
                 btn1.setFocusable(false);

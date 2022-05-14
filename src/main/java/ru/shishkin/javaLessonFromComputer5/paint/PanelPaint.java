@@ -5,15 +5,17 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class PanelPaint extends JPanel {
-    Color[] masColor;
-    JButton btn;
-    JTextField txt;
-    int tCol = 0;
-    int mX, mY, mX0, mY0;
-    Boolean flag = false;
+    private Color[] masColor;
+    private JButton btn;
+    private JTextField txt;
+    private int tCol = 0;
+    private int mX, mY, mX0, mY0;
+    private Boolean flag = false;
 
-    public class myMouse1 implements MouseListener {
-        public void mouseClicked(MouseEvent e) {}
+    private class myMouse1 implements MouseListener {
+        public void mouseClicked(MouseEvent e) {
+        }
+
         public void mousePressed(MouseEvent e) {
             int tX = e.getX();
             int tY = e.getY();
@@ -43,7 +45,7 @@ public class PanelPaint extends JPanel {
         public void mouseExited(MouseEvent e) {}
     }
 
-    public class myMouse2 implements MouseMotionListener {
+    private class myMouse2 implements MouseMotionListener {
         public void mouseDragged(MouseEvent e) {
             int tX = e.getX();
             int tY = e.getY();
@@ -72,7 +74,7 @@ public class PanelPaint extends JPanel {
         setLayout(null);
         btn = new JButton("OK");
         btn.setForeground(Color.BLUE);
-        btn.setBounds(300,400,100,50);
+        btn.setBounds(300, 400, 100, 50);
 
         btn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -84,8 +86,8 @@ public class PanelPaint extends JPanel {
 
         txt = new JTextField();
         txt.setBackground(Color.CYAN);
-        txt.setFont(new Font("arial",0,40));
-        txt.setBounds(50,200,400,100);
+        txt.setFont(new Font("arial", 0, 40));
+        txt.setBounds(50, 200, 400, 100);
         add(txt);
 
         addMouseListener(new myMouse1());
@@ -112,8 +114,8 @@ public class PanelPaint extends JPanel {
         if (flag == true) {
             gr.setColor(masColor[tCol]);
             gr.drawLine(mX0, mY0, mX, mY);
-            mX0=mX;
-            mY0=mY;
+            mX0 = mX;
+            mY0 = mY;
         }
     }
 }

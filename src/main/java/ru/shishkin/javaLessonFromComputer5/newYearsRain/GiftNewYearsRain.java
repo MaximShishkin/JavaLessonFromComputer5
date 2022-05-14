@@ -5,13 +5,12 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class GiftNewYearsRain {
+    protected Image img;
+    protected int x, y;
+    protected Boolean act;
+    protected Timer timerUpdate;
 
-    public Image img;
-    public int x, y;
-    public Boolean act;
-    Timer timerUpdate;
-
-    public GiftNewYearsRain(Image img) {
+    protected GiftNewYearsRain(Image img) {
         timerUpdate = new Timer(500, new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 vniz();
@@ -21,7 +20,7 @@ public class GiftNewYearsRain {
         act = false;
     }
 
-    public void start() {
+    protected void start() {
         timerUpdate.setDelay(10);
         timerUpdate.start();
         y = 250;
@@ -29,7 +28,7 @@ public class GiftNewYearsRain {
         act = true;
     }
 
-    public void vniz() {
+    protected void vniz() {
         if (act == true) {
             y += 1;
         }
@@ -38,7 +37,7 @@ public class GiftNewYearsRain {
         }
     }
 
-    public void draw(Graphics gr) {
+    protected void draw(Graphics gr) {
         if (act == true) {
             gr.drawImage(img, x, y, null);
         }

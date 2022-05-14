@@ -2,7 +2,7 @@ package ru.shishkin.javaLessonFromComputer5.newYearsRain;
 
 import javax.swing.*;
 
-public class NewYearsRain {
+public class ApplicationNewYearsRain {
     public static void main(String[] args) {
         String rez = JOptionPane.showInputDialog(null, "Enter difficulty from 1 to 9:",
                 "Enter difficulty", 3);

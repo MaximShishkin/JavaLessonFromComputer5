@@ -2,7 +2,7 @@ package ru.shishkin.javaLessonFromComputer5.lesson2;
 
 import java.util.Scanner;
 
-public class Lesson2 {
+public class ApplicationLesson2 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
