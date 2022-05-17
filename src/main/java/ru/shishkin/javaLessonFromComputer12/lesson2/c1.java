@@ -1,4 +1,4 @@
-package ru.shishkin.javaLessonFromComputer12.p1;
+package ru.shishkin.javaLessonFromComputer12.lesson2;
 
 import javax.swing.*;
 

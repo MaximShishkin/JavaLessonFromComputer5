@@ -1,4 +1,4 @@
-package ru.shishkin.javaLessonFromComputer12.mouse1;// ��� ������ � ������
+package ru.shishkin.javaLessonFromComputer12.paint;// ��� ������ � ������
 import javax.swing.*;
 //��� ������ � ��������
 import java.awt.*;

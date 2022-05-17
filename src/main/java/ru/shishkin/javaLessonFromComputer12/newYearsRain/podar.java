@@ -1,4 +1,4 @@
-package ru.shishkin.javaLessonFromComputer12.game1;// ��������� ��� ������, ���� ����������!
+package ru.shishkin.javaLessonFromComputer12.newYearsRain;// ��������� ��� ������, ���� ����������!
 // package game4;
 
 

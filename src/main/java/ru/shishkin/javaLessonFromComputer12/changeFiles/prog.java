@@ -1,4 +1,4 @@
-package ru.shishkin.javaLessonFromComputer12.m2l10;
+package ru.shishkin.javaLessonFromComputer12.changeFiles;
 
 import java.awt.EventQueue;
 import javax.swing.JOptionPane;

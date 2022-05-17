@@ -1,4 +1,4 @@
-package ru.shishkin.javaLessonFromComputer12.javaLesson1;
+package ru.shishkin.javaLessonFromComputer12.lesson3;
 
 public class JavaLesson1 {
     // ����� �����

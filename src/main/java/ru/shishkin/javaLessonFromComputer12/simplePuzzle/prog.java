@@ -1,4 +1,4 @@
-package ru.shishkin.javaLessonFromComputer12.game2;// ��������� ��� ������, ���� ����������!
+package ru.shishkin.javaLessonFromComputer12.simplePuzzle;// ��������� ��� ������, ���� ����������!
 // package les6;
 
 import javax.swing.*;

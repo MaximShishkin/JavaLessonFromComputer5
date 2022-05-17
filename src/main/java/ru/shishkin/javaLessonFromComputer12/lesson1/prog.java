@@ -1,4 +1,4 @@
-package ru.shishkin.javaLessonFromComputer12.less1;
+package ru.shishkin.javaLessonFromComputer12.lesson1;
 
 import java.util.Scanner;
 public class prog {
