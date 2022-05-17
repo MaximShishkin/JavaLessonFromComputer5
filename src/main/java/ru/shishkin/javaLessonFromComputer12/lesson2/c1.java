@@ -30,15 +30,3 @@ public class c1 {
 		a2.zaqr(20);
 	}
 }
-
-class auto 
-{
-	int speed;
-	int mas;
-	String color;
-	
-	void zaqr(int kol)
-	{
-		mas +=kol;
-	}
-}
