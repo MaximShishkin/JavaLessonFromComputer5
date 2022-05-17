@@ -1,4 +1,4 @@
-package ru.shishkin.javaLessonFromComputer12.spaceMovement;// ��������� ��� ������, ���� ����������!
+package ru.shishkin.javaLessonFromComputer12.planetaryMovement;// ��������� ��� ������, ���� ����������!
 // package les6;
 
 import javax.swing.*;
