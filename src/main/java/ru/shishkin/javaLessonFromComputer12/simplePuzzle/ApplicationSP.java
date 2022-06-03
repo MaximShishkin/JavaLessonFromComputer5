@@ -1,5 +1,4 @@
-package ru.shishkin.javaLessonFromComputer12.simplePuzzle;// ��������� ��� ������, ���� ����������!
-// package les6;
+package ru.shishkin.javaLessonFromComputer12.simplePuzzle;
 
 
 public class ApplicationSP {

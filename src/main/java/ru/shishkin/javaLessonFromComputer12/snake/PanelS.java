@@ -20,10 +20,10 @@ class PanelS extends JPanel
 
     private class myKey implements KeyListener
     {
-        // �����, ������� ����������� ��� �������
+
         public void keyPressed(KeyEvent e)
         {
-            // ��������� ���� ������� �������
+
             int key_ = e.getKeyCode();
             if(key_==KeyEvent.VK_LEFT) myGame.new_napr=0;
             if(key_==KeyEvent.VK_RIGHT) myGame.new_napr=2;
@@ -54,10 +54,10 @@ class PanelS extends JPanel
 
         tmDraw = new Timer(20,new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                repaint(); // ������ ������ ����������� ���� (public void paintComponent(Graphics gr))
+                repaint();
             }
         });
-        tmDraw.start(); // ������ ������� ��� �����������
+        tmDraw.start();
 
         tmUpdate = new Timer(100,new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -128,9 +128,6 @@ class PanelS extends JPanel
                     gr.drawImage(ob,10+j*20,10+i*20,null);
                 if (myGame.mas[i][j]>=2)
                     gr.drawImage(telo,10+j*20,10+i*20,null);
-                //gr.setColor(Color.YELLOW);
-                //gr.setFont(new Font("arial",0,22));
-                //gr.drawString(""+myGame.mas[i][j], 12+j*20, 30+i*20);
             }
         }
         gr.setColor(Color.BLUE);

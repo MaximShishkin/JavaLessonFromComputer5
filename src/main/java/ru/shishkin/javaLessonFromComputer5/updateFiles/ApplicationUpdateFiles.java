@@ -147,7 +147,7 @@ public class ApplicationUpdateFiles extends JFrame {
                                     new BufferedReader(new InputStreamReader(obj));
                             String tmp = "";
                             while (in.ready()) {
-                                tmp += (in.readLine() + "\n"); //������� ������
+                                tmp += (in.readLine() + "\n");
                             }
                             textArea.setText(tmp);
                             in.close();

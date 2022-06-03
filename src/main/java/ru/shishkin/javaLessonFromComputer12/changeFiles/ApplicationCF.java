@@ -22,9 +22,6 @@ public class ApplicationCF extends JFrame {
 	private JTextField textFieldFile;
 	private JTextArea textArea;
 
-	/**
-	 * Launch the application.
-	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -38,9 +35,6 @@ public class ApplicationCF extends JFrame {
 		});
 	}
 
-	/**
-	 * Create the frame.
-	 */
 	public ApplicationCF() {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(ApplicationCF.class.getResource("/javax/swing/plaf/metal/icons/Inform.gif")));
 		setTitle("\u041E\u043F\u0435\u0440\u0430\u0446\u0438\u0438 \u0434\u043B\u044F \u0440\u0430\u0431\u043E\u0442\u044B \u0441 \u0444\u0430\u0439\u043B\u0430\u043C\u0438");
@@ -227,40 +221,13 @@ public class ApplicationCF extends JFrame {
 			     File nf = new File(str);
 			     if (nf.exists())
 			     {
-
-			       // ������ � ����
 			       try
 			       {
 			         OutputStream obj = new FileOutputStream(str);
 			         BufferedWriter out = 
 			             new BufferedWriter(new OutputStreamWriter(obj));
 			         
-			        /* int N=p.length();
-			         for (int i=0; i<s.length(); i++)
-			         {
-			        	 char ch =s.charAt(i);
-			        	 
-			        	 char ch1=p.charAt(i);
-			        	 int k = ch;
-			        	 t=i%10+1;
-			        	 k=k+t;
-			        	 char g =(char)k;
-			        	 
-			        	 rez = rez+g;
-			         }
-			         out.write(rez);
-			         int N=rez.length();
-			         for (int i=0; i<rez.length(); i++)
-			         {
-			        	 N=N-1;
-			        	 char ch=rez.charAt(i);
-			        	 int k= ch;
-			        	 t=i%10+1;
-			        	 k=k-1*t;
-			        	 char g =(char)k;
-			        	 shif =shif+g;
-			        	 
-			         }*/
+
 			         
 			         int N=p.length();
 			         for (int i=0; i<s.length(); i++)
@@ -288,9 +255,7 @@ public class ApplicationCF extends JFrame {
 			        	 rez = rez+g;
 			         }
 			         out.write(rez);
-			         
-			         //out.write(textArea.getText());
-			         //out.write(shif);
+
 			         out.close();
 			         obj.close();
 			         JOptionPane.showMessageDialog(null, 

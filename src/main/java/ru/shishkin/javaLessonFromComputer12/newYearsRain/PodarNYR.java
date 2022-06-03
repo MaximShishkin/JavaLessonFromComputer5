@@ -1,46 +1,43 @@
-package ru.shishkin.javaLessonFromComputer12.newYearsRain;// ��������� ��� ������, ���� ����������!
-// package game4;
+package ru.shishkin.javaLessonFromComputer12.newYearsRain;
 
 
-// ����������� ����������� ���������
+
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-// ����� ��� �������, ��������� ������
 class PodarNYR {
 	
-	public Image img; // ����������� �������
-    public int x,y; // ��������� ������� �� ������� ����, � ��������, x - ������ �����, y - ������ ������
-    public Boolean act; // ���������� ����������� ����, ������������ ���������� �������, ���� �� ������� ���� ��� ���
-    Timer timerUpdate; // ������, ���������� �� �������� ������� ����
+	public Image img;
+    public int x,y;
+    public Boolean act;
+    Timer timerUpdate;
     private int napr= 0;
     public int g=0;
-    
-    // ����������� ������
+
     public PodarNYR(Image img)
     {
-    	// �������� � ��������� �������, ����������� �� �������� ������� ����
+
 		timerUpdate = new Timer(500,new ActionListener() {				
 			public void actionPerformed(ActionEvent e) {
-	            vniz(); // �����, �������������� �������� ������� ����
+	            vniz();
 		}
 	    });		
-    	this.img = img; // �������� ����������� �� ������� ������ ������������ ������ � ���������� ������
-    	act=false; // ���������� ������ ������� ����������, ������������� �� ������� ����    	
+    	this.img = img;
+    	act=false;
     }
     
-    // �����, ����������� ����������� ������� �� ������� ����, ����� ��� ������ �������� ����
+
     public void start()
     {
-    	timerUpdate.setDelay(30); // ��������� ��������� �������� ��� �������
-        timerUpdate.start(); // ������ �������
-        y = 0; // ������ ������ � ��������
-        x = (int)(Math.random()*700); // ������ ����� � ��������, �������� ��������� ������� �� 0 �� 700
-        act = true; // 
+    	timerUpdate.setDelay(30);
+        timerUpdate.start();
+        y = 0;
+        x = (int)(Math.random()*700);
+        act = true;
     }
-    
-    // �����, �������������� �������� ������� ���� 
+
     public void vniz()
     {
     	if (napr==8) y-=6;
@@ -58,21 +55,20 @@ class PodarNYR {
         }
        
         if (g==0)
-        {if ((act==true)&&(y<=6)) // ���� ������� ������� �� ������� ����
+        {if ((act==true)&&(y<=6))
        {
     	   napr=2;
     	   g=1;
     	   return;
     	   
-    	   //napr=(int)(Math.random()*3+7); // ���������� ������� ������ �� 6 ��������
+
        }}
         else {
-       if ((y+img.getHeight(null))>=470) // ���� ������� ������ ������ �������
+       if ((y+img.getHeight(null))>=470)
        {
-    	   //napr=8;
     	   napr=(int)(Math.random()*3+7);
     	   return;
-    	   //timerUpdate.stop(); // ��������� �������
+
        }
        if(y<=0)
        {
@@ -97,13 +93,12 @@ class PodarNYR {
       
        
     }
-    
-    // �����, ����������� ��������� ������� �� ������� ����, ���� �� �������
+
     public void draw(Graphics gr)
     {
     	if (act==true)
     	{
-    	   gr.drawImage(img,x,y,null); // ��������� �����������
+    	   gr.drawImage(img,x,y,null);
     	}    	
     }
 }

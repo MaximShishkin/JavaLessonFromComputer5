@@ -12,7 +12,7 @@ class PanelSP extends JPanel
     private int napr = 2;
     private Image img;
     JButton btn1,btn2,btn3;
-    //private Image[] Image;
+
     Image[] mas = new Image[15];
     JLabel[] txt;
     int kol=0;
@@ -27,19 +27,17 @@ class PanelSP extends JPanel
 
     public class myMouse1 implements MouseListener {
 
-        // ������ ������� ����
+
         public void mouseClicked(MouseEvent e) {
 
         }
 
-        // ������� ������ ����
+
         public void mousePressed(MouseEvent e) {
-            //System.out.println();
-            //data[1][1]=15;
+
 
         }
 
-        // ��� ���������� ������ ���� ����� �������
         public void mouseReleased(MouseEvent e) {
 
             int tX = e.getX();
@@ -58,28 +56,28 @@ class PanelSP extends JPanel
             }
         }
 
-        // ��� ��������� ������� ���� �� ������ ����
+
         public void mouseEntered(MouseEvent e) {
 
         }
 
-        // ��� ������ ������� ���� �� ������� ������ ����
+
         public void mouseExited(MouseEvent e) {
 
         }
     }
 
     public class myMouse2 implements MouseMotionListener {
-        // ��� ����������� ���� � ������� ������� - ������
+
         public void mouseDragged(MouseEvent e) {
-            // ��������� ��������� ������� ����
+
 
 
         }
 
-        // ��� ����������� ����
+
         public void mouseMoved(MouseEvent e) {
-            // ��������� ��������� ������� ����
+
 
 
         }
