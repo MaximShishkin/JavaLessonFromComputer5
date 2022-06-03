@@ -1,6 +1,6 @@
 package ru.shishkin.javaLessonFromComputer12.snake;
 
-public class game {
+public class GameS {
 	int [][] mas;
 	int napr;
 	int gX,gY;
@@ -9,7 +9,7 @@ public class game {
 	int dlina;
 	boolean endg;
 	
-	public game()
+	public GameS()
 	{
 		mas = new int [30][30];
 			

@@ -16,7 +16,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.io.*;
 
-public class prog extends JFrame {
+public class ApplicationCF extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textFieldFile;
@@ -29,7 +29,7 @@ public class prog extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					prog frame = new prog();
+					ApplicationCF frame = new ApplicationCF();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -41,8 +41,8 @@ public class prog extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public prog() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage(prog.class.getResource("/javax/swing/plaf/metal/icons/Inform.gif")));
+	public ApplicationCF() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(ApplicationCF.class.getResource("/javax/swing/plaf/metal/icons/Inform.gif")));
 		setTitle("\u041E\u043F\u0435\u0440\u0430\u0446\u0438\u0438 \u0434\u043B\u044F \u0440\u0430\u0431\u043E\u0442\u044B \u0441 \u0444\u0430\u0439\u043B\u0430\u043C\u0438");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 539, 338);

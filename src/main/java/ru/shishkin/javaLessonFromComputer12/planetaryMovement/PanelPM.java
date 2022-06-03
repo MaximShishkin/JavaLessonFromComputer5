@@ -9,7 +9,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.io.File;
 
-class myPanel extends JPanel
+class PanelPM extends JPanel
 {
     private int x=0,y=0,x1=500,y1=300,XX,YY;
     private int napr = 2;
@@ -73,7 +73,7 @@ class myPanel extends JPanel
     }
 
 
-    public myPanel()
+    public PanelPM()
     {
         addKeyListener(new myKey());
         setFocusable(true);

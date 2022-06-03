@@ -10,7 +10,7 @@ import java.awt.event.WindowEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 
-class myFrame1 extends JFrame
+class FrameVS extends JFrame
 {
     // ���������� ���� Robot
     private Robot rob;
@@ -22,7 +22,7 @@ class myFrame1 extends JFrame
     private Frame wnd;
 
     // ����������� ������
-    public myFrame1()
+    public FrameVS()
     {
         try
         {

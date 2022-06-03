@@ -6,7 +6,7 @@ package ru.shishkin.javaLessonFromComputer12.newYearsRain;// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï
 import javax.swing.*;
 
 // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
-public class game {
+public class ApplicationNYR {
 
 	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	public static void main(String[] args) {
@@ -21,7 +21,7 @@ public class game {
 		   if ((slogn>=1)&&(slogn<=15))
 		   {
     	      // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
-		      okno window = new okno(slogn);
+		      FrameNYR window = new FrameNYR(slogn);
 		   }
 	}
 

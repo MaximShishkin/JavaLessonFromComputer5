@@ -9,14 +9,14 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.io.File;
 
-class myPanel extends JPanel
+class PanelS extends JPanel
 {
-    game myGame;
+    GameS myGame;
     Timer tmDraw,tmUpdate;
     Image fon, telo, golova, ob, endg;
     JLabel lb;
     JButton btn1,btn2;
-    myPanel pan;
+    PanelS pan;
 
     private class myKey implements KeyListener
     {
@@ -34,13 +34,13 @@ class myPanel extends JPanel
         public void keyTyped(KeyEvent e) {}
     }
 
-    public myPanel()
+    public PanelS()
     {
         pan= this;
         addKeyListener(new myKey());
         setFocusable(true);
 
-        myGame = new game();
+        myGame = new GameS();
 
         try
         {

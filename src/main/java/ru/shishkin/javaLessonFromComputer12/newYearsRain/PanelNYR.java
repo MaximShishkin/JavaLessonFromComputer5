@@ -10,13 +10,13 @@ import java.awt.event.*;
 import java.io.*;
 
 // ����� ������, ������� �������� ������� �����
-class pole extends JPanel
+class PanelNYR extends JPanel
 {
 	  private Image shapka; // �������� ���������� ������, � ������� ����������� �����
 	  private Image fon; // �������� ���������� ������, � ������� ����������� ���
 	  public int x = 400; // �������� ���������� ������, � ������� ����������� �����
 	  private int slogn; // ���������� ��������� ����
-	  private podar[] gamePodar; // ������ ��������
+	  private PodarNYR[] gamePodar; // ������ ��������
 	  private Image end_game; // ����������� ��������� ����
 	  public Timer timerUpdate,timerDraw,timercheck; // ��� �������: ������ ��� 
 	  public int score=0;
@@ -26,7 +26,7 @@ class pole extends JPanel
 	  public int S=0;
 	  	  
 	   // ����������� ������ 
-	   public pole(int slogn)
+	   public PanelNYR(int slogn)
 	   {		   
 		   this.slogn = slogn;			  
 		   // �������� ����������� ����� �� �����
@@ -51,12 +51,12 @@ class pole extends JPanel
 		   catch(IOException ex) {}		   
 		
     		//  �������� ���� ����������� ��������
-		   gamePodar = new podar[50];
+		   gamePodar = new PodarNYR[50];
 		   for (int i=0;i<15;i++)
 		   {
 			   try
 			   {
-				   gamePodar[i] = new podar(ImageIO.read(new File("./p"+(i%7)+".png")));
+				   gamePodar[i] = new PodarNYR(ImageIO.read(new File("./p"+(i%7)+".png")));
 			   }
 			   catch (IOException ex) {}
 		   }

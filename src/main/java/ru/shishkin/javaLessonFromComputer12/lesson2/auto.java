@@ -1,6 +1,6 @@
 package ru.shishkin.javaLessonFromComputer12.lesson2;
 
-class auto
+class Auto
 {
     int speed;
     int mas;

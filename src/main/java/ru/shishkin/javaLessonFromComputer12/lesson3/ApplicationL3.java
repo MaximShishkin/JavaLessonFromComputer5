@@ -1,6 +1,6 @@
 package ru.shishkin.javaLessonFromComputer12.lesson3;
 
-public class JavaLesson1 {
+public class ApplicationL3 {
     // ����� �����
 	public static void main(String[] args) {
 		// ���� �� ��� ��������, �� ���� ������� � ���!

@@ -8,9 +8,9 @@ import java.awt.*;
 import java.awt.event.*;
 
 // ����� ����, � ������� ��������� ������� ����
-class okno extends JFrame
+class FrameNYR extends JFrame
 {	
-    private pole gameP; // �������� ���������� ������ - ������� ����
+    private PanelNYR gameP; // �������� ���������� ������ - ������� ����
     private int slogn; // �������� ���������� ������ - ��������� ����
     
     // ���������� ������� ������� �� �������
@@ -43,7 +43,7 @@ class okno extends JFrame
 	   }            	
 	
 	// ����������� ������
-    public okno(int slogn)
+    public FrameNYR(int slogn)
     {
     	// ��������� ���������, ��������� ������������� � ���������� ������
     	this.slogn = slogn;
@@ -63,7 +63,7 @@ class okno extends JFrame
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
         // �������� ������� - �������� ����
-        gameP = new pole(slogn);
+        gameP = new PanelNYR(slogn);
         // ������������ (��������) ������ - �������� ���� � ����
         Container con = getContentPane();
         con.add(gameP);

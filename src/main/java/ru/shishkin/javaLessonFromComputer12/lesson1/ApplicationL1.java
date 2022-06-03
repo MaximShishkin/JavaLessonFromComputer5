@@ -1,10 +1,9 @@
 package ru.shishkin.javaLessonFromComputer12.lesson1;
 
 import java.util.Scanner;
-public class prog {
 
+public class ApplicationL1 {
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		Scanner scan = new Scanner(System.in);
 				int t1 = scan.nextInt();
 		int t2 = t1 %60;

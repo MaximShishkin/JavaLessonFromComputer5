@@ -3,11 +3,11 @@ package ru.shishkin.javaLessonFromComputer12.snake;
 import javax.swing.*;
 import java.awt.*;
 
-class myFrame extends JFrame
+class FrameS extends JFrame
 {
-    public myFrame()
+    public FrameS()
     {
-        myPanel p = new myPanel();
+        PanelS p = new PanelS();
         Container cont = getContentPane();
         cont.add(p);
         setTitle("Snake");

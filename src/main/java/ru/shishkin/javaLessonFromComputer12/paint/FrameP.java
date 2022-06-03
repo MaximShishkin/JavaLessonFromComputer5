@@ -4,10 +4,10 @@ import javax.swing.*;
 import java.awt.*;
 
 // ����� ����
-class okno extends JFrame {
+class FrameP extends JFrame {
 
     // ����������� ������ ����
-    public okno() {
+    public FrameP() {
         // ������� �������� � ��������� ����
         setBounds(0, 0, 800, 600);
         // ������� ��������� ����
@@ -21,7 +21,7 @@ class okno extends JFrame {
         setResizable(false);
 
         // �������� ������� ������
-        panel pan = new panel();
+        PanelP pan = new PanelP();
 
         // ��������� ����������� (��������) ����
         Container con = getContentPane();

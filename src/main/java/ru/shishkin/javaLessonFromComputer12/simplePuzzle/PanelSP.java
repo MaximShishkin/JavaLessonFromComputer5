@@ -6,7 +6,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.io.File;
 
-class myPanel extends JPanel
+class PanelSP extends JPanel
 {
     private int x=3,y=3;
     private int napr = 2;
@@ -86,7 +86,7 @@ class myPanel extends JPanel
     }
 
 
-    public myPanel()
+    public PanelSP()
     {
 
 

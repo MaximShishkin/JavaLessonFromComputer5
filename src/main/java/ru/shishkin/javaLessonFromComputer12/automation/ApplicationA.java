@@ -4,7 +4,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class prog {
+public class ApplicationA {
 
 	// ��������� ���������� ���� Robot
 	public static Robot rob=null;

@@ -3,11 +3,11 @@ package ru.shishkin.javaLessonFromComputer12.simplePuzzle;
 import javax.swing.*;
 import java.awt.*;
 
-class myFrame extends JFrame
+class FrameSP extends JFrame
 {
-    public myFrame()
+    public FrameSP()
     {
-        myPanel np = new myPanel();
+        PanelSP np = new PanelSP();
         Container cont = getContentPane();
         cont.add(np);
         setBounds(0, 0, 640, 360);

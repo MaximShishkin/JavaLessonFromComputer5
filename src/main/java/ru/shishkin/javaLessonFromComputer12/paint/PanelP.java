@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.event.*;
 
 // ����� ������, ������� ������� � ����
-class panel extends JPanel {
+class PanelP extends JPanel {
     // ������ ������
     Color[] masColor;
 
@@ -128,7 +128,7 @@ class panel extends JPanel {
     }
 
     // ����������� ������ ������
-    public panel() {
+    public PanelP() {
 
 
         setLayout(null);

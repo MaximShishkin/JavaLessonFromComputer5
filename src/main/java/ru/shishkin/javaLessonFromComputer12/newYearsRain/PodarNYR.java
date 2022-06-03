@@ -8,7 +8,7 @@ import java.awt.*;
 import java.awt.event.*;
 
 // ����� ��� �������, ��������� ������
-class podar {
+class PodarNYR {
 	
 	public Image img; // ����������� �������
     public int x,y; // ��������� ������� �� ������� ����, � ��������, x - ������ �����, y - ������ ������
@@ -18,7 +18,7 @@ class podar {
     public int g=0;
     
     // ����������� ������
-    public podar(Image img)
+    public PodarNYR(Image img)
     {
     	// �������� � ��������� �������, ����������� �� �������� ������� ����
 		timerUpdate = new Timer(500,new ActionListener() {				

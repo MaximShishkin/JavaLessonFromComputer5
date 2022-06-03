@@ -3,11 +3,11 @@ package ru.shishkin.javaLessonFromComputer12.planetaryMovement;
 import javax.swing.*;
 import java.awt.*;
 
-class myFrame extends JFrame
+class FramePM extends JFrame
 {
-    public myFrame()
+    public FramePM()
     {
-        myPanel np = new myPanel();
+        PanelPM np = new PanelPM();
         Container cont = getContentPane();
         cont.add(np);
         setBounds(0, 0, 800, 600);
