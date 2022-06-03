@@ -1,13 +1,11 @@
 package ru.shishkin.javaLessonFromComputer12.lesson2;
 
-class Auto
-{
-    int speed;
-    int mas;
-    String color;
+public class Auto {
+    protected int speed;
+    protected int mas;
+    protected String color;
 
-    void zaqr(int kol)
-    {
-        mas +=kol;
+    protected void zapr(int kol) {
+        mas += kol;
     }
 }
