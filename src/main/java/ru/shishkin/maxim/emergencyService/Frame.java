@@ -156,9 +156,7 @@ public class Frame extends JFrame {
 
             noi++;
             dif = Math.abs(ncc - ncp) / ncc;
-        }
-
-        while (dif > epsilon && noi < 1000);
+        } while (dif > epsilon && noi < 1000);
 
         for (int i = 0; i <= V; i++) {
             P[i] = P[i] / ncc;
