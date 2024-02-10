@@ -24,7 +24,7 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>ru.shishkin.maxim.gaussSeidelMethod.App</mainClass>
+                            <mainClass>ru.shishkin.maxim.emergencyService.App</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

@@ -17,21 +17,22 @@
       </list>
     </option>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="22eVrqrqU2caHIdnQnb1oOCsR2M" />
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.App.executor": "Run",
     "Application.Application.executor": "Run",
     "Maven.GaussSeidelMethod [clean].executor": "Run",
     "Maven.GaussSeidelMethod [install].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/Admin/Desktop/gitt/pacman",
+    "last_opened_file_path": "C:/Users/Admin/Desktop/gitt/emergency-service/src/main/resources",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0"
@@ -39,13 +40,14 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Admin\Desktop\gitt\emergency-service\src\main\resources" />
       <recent name="D:\Files\MakShish\Desktop\awdaw\GaussSeidelMethod\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Application">
+  <component name="RunManager" selected="Application.App">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ru.shishkin.maxim.gaussSeidelMethod.App" />
-      <module name="GaussSeidelMethod" />
+      <option name="MAIN_CLASS_NAME" value="ru.shishkin.maxim.emergencyService.App" />
+      <module name="EmergencyService" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="ru.shishkin.gaussSeidelMethod.*" />
@@ -75,7 +77,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Application" />
+        <item itemvalue="Application.App" />
         <item itemvalue="JAR Application.GaussSeidelMethod-1.0-SNAPSHOT.jar" />
         <item itemvalue="Application.start" />
       </list>

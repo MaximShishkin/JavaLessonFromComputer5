@@ -1,4 +1,4 @@
-package ru.shishkin.maxim.gaussSeidelMethod;
+package ru.shishkin.maxim.emergencyService;
 
 public class App {
     public static void main(String[] args) {
