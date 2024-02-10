@@ -2,6 +2,7 @@ package ru.shishkin.maxim.emergencyService;
 
 public class App {
     public static void main(String[] args) {
-        new Frame();
+        new Calculation().getResault();
+        //new Frame();
     }
 }

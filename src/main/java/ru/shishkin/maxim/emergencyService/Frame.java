@@ -161,7 +161,6 @@ public class Frame extends JFrame {
         for (int i = 0; i <= V; i++) {
             P[i] = P[i] / ncc;
             rezultat = rezultat + "P(" + i + ")=" + P[i] + "\n";
-            // System.out.println("P(" + i + ")=" + P[i]);
         }
 
         double p = 0;
@@ -177,12 +176,6 @@ public class Frame extends JFrame {
         rezultat = rezultat + "" + p + "\n";
         rezultat = rezultat + "Среднее количество занятых операторов: " + "\n";
         rezultat = rezultat + "" + m + "\n";
-
-        /*
-        System.out.println("Pc=" + p);
-        System.out.println("m=" + m);
-        System.out.println("dif=" + dif);
-         */
 
         return rezultat;
     }
