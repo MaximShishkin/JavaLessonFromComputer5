@@ -2,25 +2,28 @@ package ru.shishkin.maxim.emergencyService;
 
 public class Calculation {
     // Входные параметры
+    // Вероятность запроса на обслуживание голосом
+    private double Pv = 0.8; // 0.8
+    // Вероятность запроса на обслуживание файлом
+    private double Pf = 0.2; //
+    // Вероятноссть обслуживания IVR или ЧатБот
+    private double Pr = 0.8;
+    // Интенсивность входящих запросов на обслуживание
+    private double L = 5;
     // Интенсивность поступления заявок v - voice
-    private double Lv = 4;
+    private double Lv = L * Pv;
     // Интенсивность поступления заявок f - file
-    private double Lf = 1;
+    private double Lf = L * Pf;
     // Интенсивности обслуживания заявок
-    private double alfa = 3;
+    private double alfa = 4;
     // Время прибывания в очереди ожидания
     private double sigma = 2;
     // Операторы
-    private int v = 10;
+    private int v = 5;
     // Общее число мест ожиданий
     private int w = 5;
-    // Вероятность запроса на обслуживание голосом
-    private double Pv = 0.8;
-    // Вероятность запроса на обслуживание файлом
-    private double Pf = 0.2;
-    // Вероятноссть обслуживания голосом после IVR или ЧатБот
-    private double Pr = 0.8;
 
+    private int len = 8;
 
     protected void getResault() {
         double eps = 0.0000000001;
@@ -30,8 +33,8 @@ public class Calculation {
         int noi = 1;
         double ncc = 1;
         double ncp;
-        double Pleft = 0;
-        double Pright = 0;
+        double left;
+        double right;
         double dif;
 
         for (int i = 0; i <= v + w; i++) {
@@ -43,19 +46,20 @@ public class Calculation {
             ncc = 0;
 
             for (int i = 0; i <= v + w; i++) {
-                if (i < v) Pleft = Pleft + Lv * Pr;
-                if (i < v + w) Pleft = Pleft + Lf;
-                if (i > 0 && i <= v) Pleft = Pleft + i * alfa;
-                if (i > v && i <= v + w) Pleft = Pleft + v * alfa;
-                if (i > v && i <= v + w) Pleft = Pleft + sigma * (i - v);
+                left = 0;
+                if (i < v) left = left + Lv * Pr;
+                if (i < v + w) left = left + Lf;
+                if (i > 0 && i <= v) left = left + i * alfa;
+                if (i > v && i <= v + w) left = left + v * alfa;
+                if (i > v && i <= v + w) left = left + sigma * (i - v);
 
-                if (i <= v && i > 0) Pright = Pright + P[i - 1] * Lv * Pr;
-                if (i > 0) Pright = Pright + P[i - 1] * Lf;
-                if (i < v) Pright = Pright + P[i + 1] * (i + 1) * alfa;
-                if (v <= i && i < v + w) Pright = Pright + P[i + 1] * v * alfa;
-                if (v <= i && i < v + w) Pright = Pright + P[i + 1] * (i + 1 - v) * sigma;
+                right = 0;
+                if (i > 0 && i <= v) right = right + P[i - 1] * Lv * Pr;
+                if (i > 0) right = right + P[i - 1] * Lf;
+                if (i < v) right = right + P[i + 1] * (i + 1) * alfa;
+                if (i >= v && i < v + w) right = right + P[i + 1] * (v * alfa + (i + 1 - v) * sigma);
 
-                P[i] = Pright / Pleft;
+                P[i] = right / left;
                 ncc = ncc + P[i];
             }
 
@@ -70,21 +74,22 @@ public class Calculation {
         }
 
         // Доля потерянных голосовых запросов
-        double PIv = 0;
+        double pv = 0;
         for (int i = v; i <= v + w; i++) {
-            PIv = PIv + P[i];
+            pv = pv + P[i];
         }
-        System.out.println("Доля потерянных голосовых запросов PIv = " + PIv);
+        System.out.println("Доля потерянных голосовых запросов PIv = " + String.valueOf(pv).substring(0, len));
+        // new DecimalFormat("#0.00").format(0.1321231);
 
         // Доля потерянных запросов в форме файлов
-        double PIf = 0;
+        double pf = 0;
         int j = 1;
         for (int i = v + 1; i <= v + w; i++) {
-            PIf = PIf + P[i] * j;
+            pf = pf + P[i] * j;
             j++;
         }
-        PIf = PIf * sigma / Lf + P[v + w];
-        System.out.println("Доля потерянных запросов в форме файлов PIf = " + PIf);
+        pf = pf * sigma / Lf + P[v + w];
+        System.out.println("Доля потерянных запросов в форме файлов PIf = " + String.valueOf(pf).substring(0, len));
 
         // Величина среднего числа занятых операторов
         double m = 0, m2 = 0;
@@ -95,24 +100,24 @@ public class Calculation {
             m2 = m2 + P[i];
         }
         m = m + v * m2;
-        System.out.println("Величина среднего числа занятых операторов m = " + m);
+        System.out.println("Величина среднего числа занятых операторов m = " + String.valueOf(m).substring(0, len));
 
         // Величина среднего числа операторов, занятых обслуживанием голосовых запросов
         double mv = 0;
-        mv = (Lv * Pr * (1 - PIv)) / alfa;
-        System.out.println("Величина среднего числа операторов, занятых обслуживанием голосовых запросов mv = " + mv);
+        mv = (Lv * Pr * (1 - pv)) / alfa;
+        System.out.println("Величина среднего числа операторов, занятых обслуживанием голосовых запросов mv = " + String.valueOf(mv).substring(0, len));
 
         // Величина среднего числа операторов, занятых обслуживанием файлов
         double mf = 0;
         mf = m - mv;
-        System.out.println("Величина среднего числа операторов, занятых обслуживанием файлов mf = " + mf);
+        System.out.println("Величина среднего числа операторов, занятых обслуживанием файлов mf = " + String.valueOf(mf).substring(0, len));
 
         // Величина среднего числа файлов, находящихся в ожидании
         double wf = 0;
         for (int i = v + 1; i <= v + w; i++) {
             wf = wf + P[i] * (i - v);
         }
-        System.out.println("Величина среднего числа файлов, находящихся в ожидании wf = " + wf);
+        System.out.println("Величина среднего числа файлов, находящихся в ожидании wf = " + String.valueOf(wf).substring(0, len));
 
         // Величина среднего времени нахождения файла в ожидании
         double tw = 0;
@@ -120,6 +125,6 @@ public class Calculation {
             tw = tw + P[i];
         }
         tw = wf / (Lf * tw);
-        System.out.println("Величина среднего времени нахождения файла в ожидании tw = " + tw);
+        System.out.println("Величина среднего времени нахождения файла в ожидании tw = " + String.valueOf(tw).substring(0, len));
     }
 }
