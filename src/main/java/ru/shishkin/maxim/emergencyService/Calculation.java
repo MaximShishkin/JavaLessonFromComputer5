@@ -5,25 +5,37 @@ import java.text.DecimalFormat;
 public class Calculation {
     // Входные параметры
     // Вероятность запроса на обслуживание голосом
-    private double Pv = 0.8;
+    private double Pv;
     // Вероятность запроса на обслуживание файлом
-    private double Pf = 0.2;
-    // Вероятноссть обслуживания IVR или ЧатБот
-    private double Pr = 0.8;
+    private double Pf;
+    // Вероятноссть обслуживания после IVR или ЧатБот
+    private double Pr;
     // Интенсивность входящих запросов на обслуживание
-    private double L = 40;
-    // Интенсивность поступления заявок v - voice
-    private double Lv = L * Pv;
-    // Интенсивность поступления заявок f - file
-    private double Lf = L * Pf;
+    private double L;
     // Интенсивности обслуживания заявок
-    private double alfa = 4;
+    private double alfa;
     // Время прибывания в очереди ожидания
-    private double sigma = 2;
+    private double sigma;
     // Операторы
-    private int v = 10;
+    private int v;
     // Общее число мест ожиданий
-    private int w = 5;
+    private int w;
+
+    // Выходные параметры
+    // Доля потерянных голосовых запросов
+    private double pv;
+    // Доля потерянных запросов в форме файлов
+    private double pf;
+    // Величина среднего числа занятых операторов
+    private double m;
+    // Величина среднего числа операторов, занятых обслуживанием голосовых запросов
+    private double mv;
+    // Величина среднего числа операторов, занятых обслуживанием файлов
+    private double mf;
+    // Величина среднего числа файлов, находящихся в ожидании
+    private double wf;
+    // Величина среднего времени нахождения файла в ожидании
+    private double tw;
 
     public void setPv(double pv) {
         Pv = pv;
@@ -57,41 +69,64 @@ public class Calculation {
         this.w = w;
     }
 
+    public double getPv() {
+        return pv;
+    }
+
+    public double getPf() {
+        return pf;
+    }
+
+    public double getM() {
+        return m;
+    }
+
+    public double getMv() {
+        return mv;
+    }
+
+    public double getMf() {
+        return mf;
+    }
+
+    public double getWf() {
+        return wf;
+    }
+
+    public double getTw() {
+        return tw;
+    }
+
     public String getResault() {
+        // Интенсивность поступления заявок v - voice
+        double Lv = L * Pv;
+        // Интенсивность поступления заявок f - file
+        double Lf = L * Pf;
         // Точность
-        double eps = 0.0000000001;
+        double eps;
         // Массив с вероятностями
         double P[] = new double[(int) (v + w + 1)];
         // Левая часть СУР
         double left;
         // Правая часть СУР
         double right;
-        // Доля потерянных голосовых запросов
-        double pv = 0;
-        // Доля потерянных запросов в форме файлов
-        double pf = 0;
-        // Величина среднего числа занятых операторов
-        double m = 0, m2 = 0;
-        // Величина среднего числа операторов, занятых обслуживанием голосовых запросов
-        double mv = 0;
-        // Величина среднего числа операторов, занятых обслуживанием файлов
-        double mf = 0;
-        // Величина среднего числа файлов, находящихся в ожидании
-        double wf = 0;
-        // Величина среднего времени нахождения файла в ожидании
-        double tw = 0;
         // Результат вычислений
-        String resault = "";
+        String resault;
 
         // Вспомагательные переменные
-        int noi = 1;
-        double ncc = 1;
+        int noi;
+        double ncc;
         double ncp;
         double dif;
+        double m2;
 
         for (int i = 0; i <= v + w; i++) {
             P[i] = 1;
         }
+
+        noi = 1;
+        ncc = 1;
+        eps = 0.0000000001;
 
         do {
             ncp = ncc;
@@ -120,6 +155,8 @@ public class Calculation {
 
         } while (dif > eps && noi < 1000);
 
+        resault = "";
+
         for (int i = 0; i <= v + w; i++) {
             P[i] = P[i] / ncc;
             resault = resault + "P(" + i + ")=" + convertVariable(P[i]) + "\n";
@@ -136,6 +173,7 @@ public class Calculation {
 
         // Доля потерянных запросов в форме файлов
         noi = 1;
+        pf = 0;
 
         for (int i = v + 1; i <= v + w; i++) {
             pf = pf + P[i] * noi;
@@ -148,6 +186,9 @@ public class Calculation {
         resault += convertVariable(pf) + "\n";
 
         // Величина среднего числа занятых операторов
+        m = 0;
+        m2 = 0;
+
         for (int i = 1; i <= v; i++) {
             m = m + P[i] * i;
         }
@@ -174,6 +215,8 @@ public class Calculation {
         resault += convertVariable(mf) + "\n";
 
         // Величина среднего числа файлов, находящихся в ожидании
+        wf = 0;
+
         for (int i = v + 1; i <= v + w; i++) {
             wf = wf + P[i] * (i - v);
         }
@@ -182,6 +225,8 @@ public class Calculation {
         resault += convertVariable(wf) + "\n";
 
         // Величина среднего времени нахождения файла в ожидании
+        tw = 0;
+
         for (int i = v; i <= v + w - 1; i++) {
             tw = tw + P[i];
         }
@@ -194,7 +239,7 @@ public class Calculation {
         return resault;
     }
 
-    private String convertVariable(double variable) {
+    public String convertVariable(double variable) {
         return new DecimalFormat("#0.00000000").format(variable).replace(',', '.');
     }
 }
