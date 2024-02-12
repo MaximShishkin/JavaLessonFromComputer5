@@ -27,16 +27,19 @@ public class Calculation {
 
     private int len = 8;
     //
-    private String pattern = "#0.00000000";
     String resault = "";
 
     protected void getResault() {
+        // Точность
         double eps = 0.0000000001;
+        // Массив с вероятностями
         double P[] = new double[(int) (v + w + 1)];
         int noi = 1;
         double ncc = 1;
         double ncp;
+        //
         double left;
+        //
         double right;
         double dif;
         // Доля потерянных голосовых запросов
@@ -96,6 +99,9 @@ public class Calculation {
             pv = pv + P[i];
         }
 
+        resault += "Доля потерянных голосовых запросов pv = " + "\n";
+        resault += new DecimalFormat(pattern).format(pv).replace(',', '.') + "\n";
+
         // Доля потерянных запросов в форме файлов
         for (int i = v + 1; i <= v + w; i++) {
             pf = pf + P[i] * j;
@@ -103,6 +109,9 @@ public class Calculation {
         }
 
         pf = pf * sigma / Lf + P[v + w];
+
+        resault += "Доля потерянных запросов в форме файлов pf = " + "\n";
+        resault += new DecimalFormat(pattern).format(pf).replace(',', '.') + "\n";
 
         // Величина среднего числа занятых операторов
         for (int i = 1; i <= v; i++) {
@@ -115,17 +124,25 @@ public class Calculation {
 
         m = m + v * m2;
 
+        resault += "Величина среднего числа занятых операторов m = " + "\n";
+        resault += new DecimalFormat(pattern).format(m).replace(',', '.') + "\n";
+
         // Величина среднего числа операторов, занятых обслуживанием голосовых запросов
         mv = (Lv * Pr * (1 - pv)) / alfa;
-
+        resault += "Величина среднего числа операторов, занятых обслуживанием голосовых запросов mv = " + "\n";
+        resault += new DecimalFormat(pattern).format(mv).replace(',', '.') + "\n";
 
         // Величина среднего числа операторов, занятых обслуживанием файлов
         mf = m - mv;
+        resault += "Величина среднего числа операторов, занятых обслуживанием файлов mf = " + "\n";
+        resault += new DecimalFormat(pattern).format(mf).replace(',', '.') + "\n";
 
         // Величина среднего числа файлов, находящихся в ожидании
         for (int i = v + 1; i <= v + w; i++) {
             wf = wf + P[i] * (i - v);
         }
+        resault += "Величина среднего числа файлов, находящихся в ожидании wf = " + "\n";
+        resault += converVariable(wf) + "\n";
 
         // Величина среднего времени нахождения файла в ожидании
         for (int i = v; i <= v + w - 1; i++) {
@@ -134,13 +151,11 @@ public class Calculation {
 
         tw = wf / (Lf * tw);
 
-        resault += "Доля потерянных голосовых запросов pv = " + new DecimalFormat(pattern).format(pv).replace(',', '.') + "\n";
-        System.out.println("Доля потерянных голосовых запросов pv = " + new DecimalFormat(pattern).format(pv).replace(',', '.'));
-        System.out.println("Доля потерянных запросов в форме файлов pf = " + new DecimalFormat(pattern).format(pf).replace(',', '.'));
-        System.out.println("Величина среднего числа занятых операторов m = " + new DecimalFormat(pattern).format(m).replace(',', '.'));
-        System.out.println("Величина среднего числа операторов, занятых обслуживанием голосовых запросов mv = " + new DecimalFormat(pattern).format(mv).replace(',', '.'));
-        System.out.println("Величина среднего числа операторов, занятых обслуживанием файлов mf = " + new DecimalFormat(pattern).format(mf).replace(',', '.'));
-        System.out.println("Величина среднего числа файлов, находящихся в ожидании wf = " + new DecimalFormat(pattern).format(wf).replace(',', '.'));
-        System.out.println("Величина среднего времени нахождения файла в ожидании tw = " + new DecimalFormat(pattern).format(tw).replace(',', '.'));
+        resault += "Величина среднего времени нахождения файла в ожидании tw = " + "\n";
+        resault += converVariable(tw) + "\n";
+    }
+
+    private String converVariable(double variable) {
+        return new DecimalFormat("#0.00000000").format(variable).replace(',', '.');
     }
 }
