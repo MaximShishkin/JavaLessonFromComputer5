@@ -98,7 +98,10 @@ public class Frame extends JFrame {
                 lymbda = Double.parseDouble(textField_1.getText());
                 mu = Double.parseDouble(textField_2.getText());
 
-                rezultat = getResault(V, lymbda, mu);
+                rezultat = "";
+
+
+
 
                 textArea_1.setText(rezultat);
             }
@@ -121,50 +124,5 @@ public class Frame extends JFrame {
         scrollPane.setViewportView(textArea_1);
 
         setVisible(true);
-    }
-
-    private String getResault(double V, double lymbda, double mu) {
-        double epsilon = 0.0000000001;
-        double P[] = new double[(int) (V + 1)];
-        String rezultat = "";
-
-        for (int i = 0; i <= V; i++) {
-            P[i] = 1;
-        }
-
-        double noi = 1;
-        double ncc = 1;
-        double ncp;
-        double lp;
-        double rp;
-        double dif;
-
-        do {
-            ncp = ncc;
-            ncc = 0;
-
-            for (int i = 0; i <= V; i++) {
-                lp = 0;
-                if (i < V) lp = lp + lymbda;
-                if (i > 0) lp = lp + i * mu;
-                rp = 0;
-                if (i > 0) rp = rp + P[i - 1] * lymbda;
-                if (i < V) rp = rp + P[i + 1] * (i + 1) * mu;
-                P[i] = rp / lp;
-                ncc = ncc + P[i];
-            }
-
-            noi++;
-            dif = Math.abs(ncc - ncp) / ncc;
-        } while (dif > epsilon && noi < 1000);
-
-        for (int i = 0; i <= V; i++) {
-            P[i] = P[i] / ncc;
-            rezultat = rezultat + "P(" + i + ")=" + P[i] + "\n";
-        }
-
-        rezultat = rezultat + "Среднее количество занятых операторов: " + "\n";
-
-        return rezultat;
     }
 }
