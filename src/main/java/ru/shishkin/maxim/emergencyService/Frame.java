@@ -163,19 +163,7 @@ public class Frame extends JFrame {
             rezultat = rezultat + "P(" + i + ")=" + P[i] + "\n";
         }
 
-        double p = 0;
-        double m = 0;
-
-        for (int i = 0; i <= V; i++) {
-            if (i == V) p = P[i];
-            if (i > 0) m = m + P[i] * i;
-        }
-
-        dif = lymbda - lymbda * p - m * mu;
-        rezultat = rezultat + "Доля потерянных заявок: " + "\n";
-        rezultat = rezultat + "" + p + "\n";
         rezultat = rezultat + "Среднее количество занятых операторов: " + "\n";
-        rezultat = rezultat + "" + m + "\n";
 
         return rezultat;
     }
