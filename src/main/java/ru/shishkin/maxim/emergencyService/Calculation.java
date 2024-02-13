@@ -23,9 +23,9 @@ public class Calculation {
 
     // Выходные параметры
     // Доля потерянных голосовых запросов
-    private double pv;
+    private double pvoice;
     // Доля потерянных запросов в форме файлов
-    private double pf;
+    private double pfile;
     // Величина среднего числа занятых операторов
     private double m;
     // Величина среднего числа операторов, занятых обслуживанием голосовых запросов
@@ -70,11 +70,11 @@ public class Calculation {
     }
 
     public double getPv() {
-        return pv;
+        return pvoice;
     }
 
     public double getPf() {
-        return pf;
+        return pfile;
     }
 
     public double getM() {
@@ -165,25 +165,25 @@ public class Calculation {
         // Определение характеристик обслуживания запросов
         // Доля потерянных голосовых запросов
         for (int i = v; i <= v + w; i++) {
-            pv = pv + P[i];
+            pvoice = pvoice + P[i];
         }
 
         resault += "Доля потерянных голосовых запросов pv = " + "\n";
-        resault += convertVariable(pv) + "\n";
+        resault += convertVariable(pvoice) + "\n";
 
         // Доля потерянных запросов в форме файлов
         noi = 1;
-        pf = 0;
+        pfile = 0;
 
         for (int i = v + 1; i <= v + w; i++) {
-            pf = pf + P[i] * noi;
+            pfile = pfile + P[i] * noi;
             noi++;
         }
 
-        pf = pf * sigma / Lf + P[v + w];
+        pfile = pfile * sigma / Lf + P[v + w];
 
         resault += "Доля потерянных запросов в форме файлов pf = " + "\n";
-        resault += convertVariable(pf) + "\n";
+        resault += convertVariable(pfile) + "\n";
 
         // Величина среднего числа занятых операторов
         m = 0;
@@ -203,7 +203,7 @@ public class Calculation {
         resault += convertVariable(m) + "\n";
 
         // Величина среднего числа операторов, занятых обслуживанием голосовых запросов
-        mv = (Lv * Pr * (1 - pv)) / alfa;
+        mv = (Lv * Pr * (1 - pvoice)) / alfa;
 
         resault += "Величина среднего числа операторов, занятых обслуживанием голосовых запросов mv = " + "\n";
         resault += convertVariable(mv) + "\n";

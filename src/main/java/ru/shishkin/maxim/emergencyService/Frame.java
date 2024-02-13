@@ -100,9 +100,6 @@ public class Frame extends JFrame {
 
                 rezultat = "";
 
-
-
-
                 textArea_1.setText(rezultat);
             }
         });
