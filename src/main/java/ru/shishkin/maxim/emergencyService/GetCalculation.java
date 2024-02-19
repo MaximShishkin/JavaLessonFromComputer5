@@ -3,7 +3,7 @@ package ru.shishkin.maxim.emergencyService;
 public class GetCalculation {
     // Расчет доли потерянных голосовых запросов и запросов в виде файлов в зависимости от входящей интенсивности
     public void getcalculationL() {
-        for (int i = 10; i <= 63; i++) {
+        for (int i = 20; i <= 40; i += 2) {
             Calculation calculation = new Calculation();
 
             // Вероятность запроса на обслуживание голосом
@@ -16,9 +16,9 @@ public class GetCalculation {
             // Интенсивность входящих запросов на обслуживание
             calculation.setL(i);
             // Интенсивности обслуживания заявок
-            calculation.setAlfa(4);
+            calculation.setAlfa(1);
             // Время прибывания в очереди ожидания
-            calculation.setSigma(3);
+            calculation.setSigma(0.1);
 
             // Операторы
             calculation.setV(10);
@@ -28,15 +28,15 @@ public class GetCalculation {
             // Вычисления и получение результата
             calculation.getResault();
 
-            System.out.println(i + " " + calculation.convertVariable(calculation.getPv()) + " " + calculation.convertVariable(calculation.getPf()));
-            // System.out.println(calculation.convertVariable(calculation.getPv()));
-            // System.out.println(calculation.convertVariable(calculation.getPf()));
+            // System.out.println(i + " " + calculation.convertVariable(calculation.getPv()) + " " + calculation.convertVariable(calculation.getPf()));
+            // System.out.print(calculation.convertVariable(calculation.getPv()) + ", ");
+            System.out.print(calculation.convertVariable(calculation.getPf()) + ", ");
         }
     }
 
     // Расчет доли потерянных голосовых запросов и запросов в виде файлов в зависимости от количества операторов
     public void getcalculationV() {
-        for (int i = 8; i <= 13; i++) {
+        for (int i = 1; i <= 9; i++) {
             Calculation calculation = new Calculation();
 
             // Вероятность запроса на обслуживание голосом
@@ -47,11 +47,11 @@ public class GetCalculation {
             calculation.setPr(0.8);
 
             // Интенсивность входящих запросов на обслуживание
-            calculation.setL(30);
+            calculation.setL(12);
             // Интенсивности обслуживания заявок
-            calculation.setAlfa(4);
+            calculation.setAlfa(1);
             // Время прибывания в очереди ожидания
-            calculation.setSigma(3);
+            calculation.setSigma(0.1);
 
             // Операторы
             calculation.setV(i);
@@ -60,9 +60,10 @@ public class GetCalculation {
 
             // Вычисления и получение результата
             calculation.getResault();
+
             // System.out.println(i + " " + calculation.convertVariable(calculation.getPv()) + " " + calculation.convertVariable(calculation.getPf()));
-            //System.out.println(calculation.convertVariable(calculation.getPv()));
-            System.out.println(calculation.convertVariable(calculation.getPf()));
+            // System.out.print(calculation.convertVariable(calculation.getPv()) + ", ");
+            System.out.print(calculation.convertVariable(calculation.getPf()) + ", ");
         }
     }
 }

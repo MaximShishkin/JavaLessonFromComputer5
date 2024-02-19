@@ -1,15 +1,15 @@
-xv = 7:1:12;
-yv = [0.27487561,0.18729328,0.12000427,0.07195197,0.04023974,0.02096427];
-xf = 3:1:8;
-yf = [0.23332770,0.14546080,0.09119263,0.05671042,0.03451504,0.020309409];
-y = [0.05,0.05,0.05,0.05,0.05,0.05];
+xv = 10:1:18;
+yv = [0.31504931, 0.24088400, 0.17779024, 0.12618024, 0.08580254, 0.05573584, 0.03451058, 0.02034312, 0.01141275];
+xf = 1:1:9;
+yf = [0.72296678, 0.46204756, 0.25991500, 0.13700552, 0.07269653, 0.04031474, 0.02353521, 0.01434574, 0.00900675];
+y = [0.05,0.05,0.05,0.05,0.05,0.05,0.05,0.05,0.05];
 
 subplot(1,2,1)
 plot2d(xv,y,5)
 plot2d(xv,yv,2)
 xgrid();
-xtitle("Dependence of the ratio of lost voice requests on the intensity of incoming requests", "Number of operators, υ", "Ratio of lost voice requests, π");
-legend("Ratio of lost voice requests, 5%","Number of operators",2);
+xtitle("", "Number of operators, υ", "Ratio of lost voice requests, π_v");
+legend("Ratio of lost voice requests, 5%","Ratio of lost voice requests, π_v",2);
 y_axes = gca();
 y_axes.children.children(1).thickness = 2;
 y_axes.children.children(2).thickness = 2;
@@ -18,8 +18,8 @@ subplot(1,2,2)
 plot2d(xf,y,5)
 plot2d(xf,yf,2)
 xgrid();
-xtitle("Dependence of the ratio of lost file requests on the intensity of incoming requests", "Number of operators, υ", "Ratio of lost file requests, π");
-legend("Ratio of lost file requests, 5%","Number of operators",2);
+xtitle("", "Number of operators, υ", "Ratio of lost file requests, π_f");
+legend("Ratio of lost file requests, 5%","Ratio of lost file requests, π_f",2);
 y_axes = gca();
 y_axes.children.children(1).thickness = 2;
 y_axes.children.children(2).thickness = 2;
