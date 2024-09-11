@@ -1,0 +1,20 @@
+Dependence of the ratio of lost voice requests on the intensity of incoming requests
+
+
+
+Dependence of the ratio of lost  file requests on the intensity of incoming requests
+
+
+
+
+
+Dependence of the ratio of lost voice requests on the number of operators
+
+
+
+
+
+Dependence of the ratio of lost file requests on the number of operators
+
+
+
